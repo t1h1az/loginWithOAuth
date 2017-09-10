@@ -5,7 +5,7 @@ module.exports = {
   googleClientKey: "bVld3DNozPMj6HSZESbj5QL8",
   mongoURI: "mongodb://ppadmin:Fc85qtjffbCMbV@ds133054.mlab.com:33054/pptestdb",
   herokuClientKey: 'ytK-XB8-fek-M2x',
-  cookieKey: 'faelkfjaö lfjöaselkfjaseölkfjaesölfkjaeö lfkjaöl',
+  cookieKey: 'fake#qefqef',
   facebookAppId: "149014949027032",
   facebookAppSecret: "893f59e2b6589c2b66032f68f7450591",
   facebookApiVersion: "v2.10"
