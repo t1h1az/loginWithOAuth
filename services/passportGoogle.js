@@ -21,7 +21,7 @@ passport.use(
   new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientKey,
-    callbackURL: 'localhost:5000/auth/google/callback',
+    callbackURL: 'https://passport-testing-bucket.herokuapp.com/auth/google/callback',
     proxy: true
   },
   (accessToken, refreshToken, profile, done) => {
