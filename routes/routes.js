@@ -1,4 +1,6 @@
+const userRoutes = require('../routes/userRoutes');
 const usersController = require('../controllers/usersController');
+
 const methodsController = require('../controllers/methodsController');
 const express = require('express');
 

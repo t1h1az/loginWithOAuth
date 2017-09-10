@@ -17,8 +17,8 @@ db.once('open', function() {
 app.use(passport.initialize());
 app.use(passport.session());
 
-// require('./routes/authRoutes')(app);
-// require('./routes/billingRoutes')(app);
+require('./routes/routes')(app);
+require('./routes/authRoutes')(app);
 
 
 module.exports = app;
