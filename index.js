@@ -1,6 +1,7 @@
-const express = require('express');
-const app = new express();
+const app = require('./app');
 
+require('./routes/routes')(app);
 
-
-app.listen(3030);
+app.listen(3050, () => {
+  console.log('Running on port 3050');
+});
