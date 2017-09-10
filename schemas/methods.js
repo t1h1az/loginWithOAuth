@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const methodSchema = new Schema({
   title: String,
+  category: String,
   body: String,
   tags: [],
   liked: Boolean,
