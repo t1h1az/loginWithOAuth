@@ -25,6 +25,8 @@ db.once('open', function() {
 app.use(passport.initialize());
 app.use(passport.session());
 
+require('./services/passportFacebook');
+require('./services/passportGoogle');
 require('./routes/routes')(app);
 require('./routes/authRoutes')(app);
 

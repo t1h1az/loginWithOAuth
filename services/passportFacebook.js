@@ -1,14 +1,16 @@
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
+const keys = require('../configs/keys');
 
-const User = mongoose.model('users');
+const User = require('../schemas/users'); 
+
 mongoose.Promise = global.Promise;
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
+
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
     done(null, user);
@@ -16,8 +18,8 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: FACEBOOK_APP_ID,
-    clientSecret: FACEBOOK_APP_SECRET,
+    clientID: keys.facebookAppId,
+    clientSecret: keys.facebookAppSecret,
     callbackURL: "http://localhost:3000/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {

@@ -1,4 +1,7 @@
+// const passportFacebook = require('../services/passportFacebook');
+// const passportGoogle = require('../services/passportGoogle');
 const passport = require('passport');
+
 
 module.exports = (app) => {
   app.get(
@@ -18,10 +21,10 @@ module.exports = (app) => {
     '/auth/google/callback',
     passport.authenticate('google',{
         successRedirect: '/api/current_user',
-        failureRedirect: '/login'
+        failureRedirect: '/'
     }),
     (req, res) => {
-      res.redirect('/dashboard');
+      res.redirect('/d');
     }
   );
 
@@ -32,7 +35,7 @@ module.exports = (app) => {
   app.get(
     '/auth/facebook/callback',
     passport.authenticate('facebook', {
-      failureRedirect: '/login' }),
+      failureRedirect: '/' }),
     function(req, res) {
       // Successful authentication, redirect home.
       res.redirect('/');
