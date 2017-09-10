@@ -20,11 +20,11 @@ module.exports = (app) => {
   app.get(
     '/auth/google/callback',
     passport.authenticate('google',{
-        successRedirect: '/api/current_user',
-        failureRedirect: '/'
+        successRedirect: '/dashboard',
+        failureRedirect: '/loginscreen'
     }),
     (req, res) => {
-      res.redirect('/d');
+      res.redirect('/dashboard');
     }
   );
 
