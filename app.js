@@ -6,7 +6,7 @@ const keys = require('./configs/keys')
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/passportTrainingDb');
+mongoose.connect(keys.mongoURI);
 
 const db = mongoose.connection;
 
