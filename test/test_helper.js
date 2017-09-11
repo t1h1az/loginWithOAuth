@@ -7,9 +7,10 @@ mongoose.Promise = global.Promise;
 // we only need ti connect to mongo once
 //
 before((done) => {
-  mongoose.connect('mongodb://localhost/users_test');
+  mongoose.connect('mongodb://ppadmin:Fc85qtjffbCMbV@ds133004.mlab.com:33004/ghostprojecttest');
   mongoose.connection
     .once('open', () => {
+      console.log(mongoose.connection.collections);
       done();
     })
     .on('error', (error) => {
@@ -21,11 +22,11 @@ before((done) => {
 beforeEach((done) =>{
   const { users } = mongoose.connection.collections;  // simply loads all collections into consts
   users.drop(() => {
-    comments.drop(() => {
-      blogposts.drop(() => {
-        done();
-      });
-    });
+  //   comments.drop(() => {
+  //     blogposts.drop(() => {
+           done();
+  //     });
+  //   });
   });
 });
 
